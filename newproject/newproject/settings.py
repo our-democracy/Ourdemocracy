@@ -25,7 +25,7 @@ SECRET_KEY = '#vh!3&41i11!m=uf)a3$_fbw3@k&_9g^e=-!lcd93eha+_-6&1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','lab.aaupf.org','139.59.61.195']
 
 
 # Application definition
