@@ -3,33 +3,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import NewTopicForm
 from django.http import HttpResponse
 from django.http import Http404
-from .models import Board, Topic, Post
+from .models import Campaign
+# Create your views here.
 
-def home(request):
-    boards = Board.objects.all()
-    return render(request, 'home.html', {'boards': boards})
 
-def about(request):
-    return render(request, 'about.html')
-    
-def causes(request):
-    return render(request, 'causes.html')
-
-def services(request):
-    return render(request, 'services.html')
-
-def media(request):
-    return render(request, 'media.html')
-
-def tips(request):
-    return render(request, 'tips.html')
-
-def board_topics(request, pk):
-        board = get_object_or_404(Board, pk=pk)
-        return render(request, 'topics.html', {'board': board})
-
-def new_topic(request, pk):
-    board = get_object_or_404(Board, pk=pk)
+def create_campaign(request,pk):
+    campaign = get_object_or_404(Campaign, pk=pk)
     user = User.objects.first()  # TODO: get the currently logged in user
     if request.method == 'POST':
         form = NewTopicForm(request.POST)

@@ -19,6 +19,7 @@ from boards import views
 from accounts import views as accounts_views
 from django.contrib.auth import views as auth_views
 from django.conf.urls import url
+from campaign import views as campaign_views
 
 
 urlpatterns = [
@@ -26,8 +27,12 @@ urlpatterns = [
     url(r'^signup/$', accounts_views.signup, name='signup'),
     url(r'^about/$', views.about, name='about'),
     url(r'^causes/$', views.causes, name ='causes'),
+    url(r'^services/$', views.services, name ='services'),
+    url(r'^media/$', views.media, name ='media'),
+    url(r'^tips/$', views.tips, name ='tips'),
     url(r'^login/$', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
+    url(r'^create_campaign/$', campaign_views.create_campaign, name='create_campaign'),
 
     url(r'^reset/$',
         auth_views.PasswordResetView.as_view(
