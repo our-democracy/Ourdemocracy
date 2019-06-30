@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^about/$', views.about, name='about'),
     url(r'^causes/$', views.causes, name ='causes'),
     url(r'^services/$', views.services, name ='services'),
-    url(r'^media/$', views.media, name ='media'),
+    url(r'^news/$', views.news, name ='news'),
     url(r'^tips/$', views.tips, name ='tips'),
     url(r'^login/$', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),

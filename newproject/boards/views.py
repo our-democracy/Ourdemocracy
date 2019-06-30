@@ -18,8 +18,8 @@ def causes(request):
 def services(request):
     return render(request, 'services.html')
 
-def media(request):
-    return render(request, 'media.html')
+def news(request):
+    return render(request, 'news.html')
 
 def tips(request):
     return render(request, 'tips.html')
