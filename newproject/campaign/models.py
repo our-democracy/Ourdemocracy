@@ -32,7 +32,7 @@ class Campaign(models.Model):
     is_verified = models.CharField(max_length=20,choices=VERIFY_CAMPAIGN, default='no')
     status = models.CharField(max_length=30, choices =STATUS_CAMPAIGN, default='active')
     created_at = models.DateTimeField(auto_now_add=True)
-    created_by = models.ForeignKey(User,on_delete=models.CASCADE, related_name='capmaigns')
+    created_by = models.ForeignKey(User,on_delete=models.CASCADE, related_name='users')
     updated_at = models.DateTimeField(null=True)
     updated_by = models.ForeignKey(User,on_delete=models.CASCADE, null=True, related_name='+')
 
