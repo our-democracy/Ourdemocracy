@@ -3,5 +3,28 @@
 {% block title %}Start a New Topic{% endblock %}
 
 {% block content %}
-<div>hello</div>
-{% endblock %}
+<div class="contact-page-wrap">
+        <div class="container">
+            <div class="row  justify-content-center">
+            <div class="col-12 col-lg-7">
+                    {% comment %} <form class="contact-form">
+                    <h2>Start a Fundraiser</h2>
+                        <input type="text" placeholder="Title">
+                        <input type="email" placeholder="Email">
+                        <textarea rows="15" cols="6" placeholder="Messages"></textarea>
+
+                        <span>
+                            <input class="btn gradient-bg" type="submit" value="Create">
+                        </span>
+                    </form> {% endcomment %}
+                    <form method ="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class = "btn gradient-bg">Create a campaign</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock content %}

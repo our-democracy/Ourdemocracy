@@ -19,6 +19,8 @@ from boards import views
 from accounts import views as accounts_views
 from django.contrib.auth import views as auth_views
 from django.conf.urls import url
+from django.conf import settings
+from django.conf.urls.static import static
 from campaign import views as campaign_views
 
 
@@ -33,6 +35,7 @@ urlpatterns = [
     url(r'^login/$', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
     url(r'^create_campaign/$', campaign_views.create_campaign, name='create_campaign'),
+    url(r'^campaigns/$', campaign_views.campaign_list, name='campaign_list'),
 
     url(r'^reset/$',
         auth_views.PasswordResetView.as_view(
@@ -59,3 +62,6 @@ urlpatterns = [
     url(r'^boards/(?P<pk>\d+)/new/$', views.new_topic, name='new_topic'),
     path('admin/', admin.site.urls),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
