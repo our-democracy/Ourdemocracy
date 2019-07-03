@@ -44,7 +44,7 @@ def create_campaign(request):
 
 
 def campaign_list(request):
-    campaigns = Campaign.objects.all
+    campaigns = Campaign.objects.all()
     return render(request, 'campaign_list.html',{
         'campaigns':campaigns
     })
