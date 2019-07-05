@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}Start a New Topic{% endblock %}
 
@@ -19,7 +20,7 @@
                     </form> {% endcomment %}
                     <form method ="post" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    {{ form|crispy }}
                     <button type="submit" class = "btn gradient-bg">Create a campaign</button>
                     </form>
 

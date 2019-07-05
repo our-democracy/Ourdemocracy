@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'accounts',
     'boards',
+    'crispy_forms',
     'campaign'
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
