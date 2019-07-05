@@ -22,6 +22,7 @@ from django.conf.urls import url
 from django.conf import settings
 from django.conf.urls.static import static
 from campaign import views as campaign_views
+from django.views.static import serve
 
 
 urlpatterns = [
@@ -60,6 +61,9 @@ urlpatterns = [
     
     url(r'^boards/(?P<pk>\d+)/$', views.board_topics, name='board_topics'),
     url(r'^boards/(?P<pk>\d+)/new/$', views.new_topic, name='new_topic'),
+
+    url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     path('admin/', admin.site.urls),
 ]
 # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
