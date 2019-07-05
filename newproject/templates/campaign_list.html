@@ -2,7 +2,12 @@
 
 {% block title %}Campaigns{% endblock %}
 {% load static %}
-{}
+
+
+
+
+
+
 {% block content %}
 
 <div class="our-causes">
@@ -17,7 +22,7 @@
                     <div class="cause-wrap">
                         <figure class="m-0">
                         {% if campaign.campaign_image %}
-                        <img src="{{ campaign.campaign_image.url}}" alt="{{ campaign.title }}">
+                        <img src="{{ MEDIA_URL }} {{ campaign.campaign_image.url }}" alt="{{ campaign.title }}">
                         {% else %}
                          <img src="{% static "img/cause-6.jpg" %}" alt="">
 
