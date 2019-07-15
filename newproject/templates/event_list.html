@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Campaigns{% endblock %}
+{% block title %}Events{% endblock %}
 {% load static %}
 
 
@@ -12,18 +12,17 @@
 
 <div class="our-causes">
         <div class="container">
-        <h2>Campaigns</h2>
+        <h2>Events</h2>
             <div class="row">
             
-            {% for campaign in campaigns %}
+            {% for event in events %}
             
                     <div class="col-12 col-md-6 col-lg-4">
 
                     <div class="cause-wrap">
                         <figure class="m-0">
-                        {% if campaign.campaign_image %}
-                        {% comment %} <img src="{{ campaign.campaign_image.url }}" alt="{{ campaign.title }}"> {% endcomment %}
-                        <img src="/media/{{ campaign.campaign_image }}" alt="{{ campaign.title }}">
+                        {% if event.event_image %}
+                        <img src="{{ event.event_image.url }}" alt="{{ event.title }}">
                         {% else %}
                          <img src="{% static "img/cause-6.jpg" %}" alt="">
 
@@ -31,37 +30,41 @@
                            
 
                             <div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-                                <a href="#" class="btn gradient-bg mr-2">Donate Now</a>
+                                <a href="#" class="btn gradient-bg mr-2">Interested</a>
                             </div><!-- .figure-overlay -->
                         </figure>
 
                         <div class="cause-content-wrap">
                             <header class="entry-header d-flex flex-wrap align-items-center">
-                                <h3 class="entry-title w-100 m-0"><a href="#">{{ campaign.title }}</a></h3>
+                                <h3 class="entry-title w-100 m-0"><a href="#">{{ event.title }}</a></h3>
                             </header><!-- .entry-header -->
 
                             <div class="entry-content">
-                                <p class="m-0">{{ campaign.short_description }}</p>
+                                <p class="m-0">{{ event.short_description }}</p>
                             </div><!-- .entry-content -->
 
                             <div class="fund-raised w-100">
+
                                 <div class="fund-raised-bar-3 barfiller">
                                     <div class="tipWrap">
                                         <span class="tip"></span>
                                     </div><!-- .tipWrap -->
 
                                     <span class="fill" data-percentage="0"></span>
-                                </div><!-- .fund-raised-bar -->
+                                </div>
 
-                                <div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
+                                 <div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
+
                                     <div class="fund-raised-total mt-4">
-                                        Raised: {{ campaign.raised }}
-                                    </div><!-- .fund-raised-total -->
+                                        Start on : {{ event.start_time }}
+                                    </div>
 
                                     <div class="fund-raised-goal mt-4">
-                                        Goal: {{ campaign.goal }}
-                                    </div><!-- .fund-raised-goal -->
-                                </div><!-- .fund-raised-details -->
+                                        Ends on : {{ event.end_time }}
+                                    </div>
+                                </div> 
+
+
                             </div><!-- .fund-raised -->
                         </div><!-- .cause-content-wrap -->
                     </div><!-- .cause-wrap -->
