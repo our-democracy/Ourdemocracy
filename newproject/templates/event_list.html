@@ -22,7 +22,8 @@
                     <div class="cause-wrap">
                         <figure class="m-0">
                         {% if event.event_image %}
-                        <img src="{{ event.event_image.url }}" alt="{{ event.title }}">
+                        {% comment %} <img src="{{ event.event_image.url }}" alt="{{ event.title }}"> {% endcomment %}
+                        <img src="/media/{{ event.event_image }}" alt="{{ event.title }}">
                         {% else %}
                          <img src="{% static "img/cause-6.jpg" %}" alt="">
 

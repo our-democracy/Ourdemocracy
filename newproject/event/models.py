@@ -27,7 +27,7 @@ class Event(models.Model):
     end_time = models.DateTimeField()
     short_description = models.CharField(max_length=255)
     about = models.TextField()
-    event_image = models.ImageField(upload_to='event/images/',null='True',blank='True')
+    event_image = models.ImageField(upload_to='EventsImg',null='True',blank='True')
     is_verified = models.CharField(max_length=20,choices=VERIFY_EVENT, default='no')
     status = models.CharField(max_length=30, choices =STATUS_EVENT, default='active')
     created_at = models.DateTimeField(auto_now_add=True)
