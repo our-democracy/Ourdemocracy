@@ -42,11 +42,9 @@ INSTALLED_APPS = [
     'boards',
     'event',
     'crispy_forms',
-    'tempus_dominus',
     'campaigns'
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-TEMPUS_DOMINUS_INCLUDE_ASSETS: True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
