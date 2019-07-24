@@ -23,6 +23,7 @@ STATUS_EVENT = (
 class Event(models.Model):
     title = models.CharField(max_length=100, unique=True)
     category = models.CharField(max_length=50, choices=EVENT_CATEGORY, default='social event')
+    location = models.CharField(max_length=255,null=True, blank=False)
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     short_description = models.CharField(max_length=255)

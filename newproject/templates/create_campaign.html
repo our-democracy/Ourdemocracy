@@ -15,23 +15,17 @@
         <div class="container">
         
             <div class="row  justify-content-center">
-            <div class="col-12 col-lg-5">
-                    {% comment %} <form class="contact-form">
-                    <h2>Start a Fundraiser</h2>
-                        <input type="text" placeholder="Title">
-                        <input type="email" placeholder="Email">
-                        <textarea rows="15" cols="6" placeholder="Messages"></textarea>
-
-                        <span>
-                            <input class="btn gradient-bg" type="submit" value="Create">
-                        </span>
-                    </form> {% endcomment %}
-                    <h2>Create Campaign</h2>
-                    <form method ="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <button type="submit" class = "btn gradient-bg">Create a campaign</button>
-                    </form>
+            <div class="col-12 col-lg-6">
+                     <div class="card">
+                        <div class="card-body">
+                        <h3 class="card-title"><center>Start a Fundraiser</center></h3>
+                            <form method ="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <button type="submit" class = "btn gradient-bg">Create a campaign</button>
+                            </form>
+                        </div>
+                    </div>
 
                 </div>
             </div>

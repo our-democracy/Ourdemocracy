@@ -8,7 +8,7 @@ from .models import Event
 from django.core.files.storage import FileSystemStorage
 
 
-
+@login_required
 def create_event(request):
     if request.method == 'POST':
         form = NewEventForm(request.POST, request.FILES)

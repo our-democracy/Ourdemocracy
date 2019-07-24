@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'boards',
     'event',
     'crispy_forms',
-    'campaigns'
+    'campaigns',
+    'support_group'
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

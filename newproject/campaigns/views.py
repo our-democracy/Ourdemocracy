@@ -28,7 +28,7 @@ from django.core.files.storage import FileSystemStorage
 #     else:
 #         form = NewCampaignForm()
 #     return render(request, 'create_campaign.html', {'form': form})
-
+@login_required
 def create_campaign(request):
     if request.method == 'POST':
         form = NewCampaignForm(request.POST, request.FILES)

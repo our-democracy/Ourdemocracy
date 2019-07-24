@@ -23,6 +23,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from campaigns import views as campaign_views
 from event import views as event_views
+from support_group import views as support_views
 
 
 urlpatterns = [
@@ -39,6 +40,8 @@ urlpatterns = [
     url(r'^campaigns/$', campaign_views.campaign_list, name='campaign_list'),
     url(r'^create_event/$', event_views.create_event, name='create_event'),
     url(r'^events/$', event_views.event_list, name='event_list'),
+    url(r'^create_support_group/$', support_views.create_support_group, name='create_support_group'),
+    url(r'^support_groups/$', support_views.support_group_list, name='support_group_list'),
 
     url(r'^reset/$',
         auth_views.PasswordResetView.as_view(

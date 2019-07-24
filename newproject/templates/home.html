@@ -1,48 +1,8 @@
-
 {% extends 'base.html' %}
 {% load static %}
-{% comment %} 
-{% block breadcrumb %}
-  <li class="breadcrumb-item active">Boards</li>
-{% endblock %}
+
 
 {% block content %}
-  <table class="table">
-    <thead class="thead-inverse">
-      <tr>
-        <th>Board</th>
-        <th>Posts</th>
-        <th>Topics</th>
-        <th>Last Post</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for board in boards %}
-        <tr>
-          <td>
-            <a href="{% url 'board_topics' board.pk %}">{{ board.name }}</a>
-            <small class="text-muted d-block">{{ board.description }}</small>
-          </td>
-          <td class="align-middle">0</td>
-          <td class="align-middle">0</td>
-          <td></td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-{% endblock %} 
-{% endcomment %}
-
-
-
-
-
-
-
-
-
-
- {% block content %}
     <div class="swiper-container hero-slider">
         <div class="swiper-wrapper">
             <div class="swiper-slide hero-content-wrap">
@@ -62,7 +22,7 @@
                                 </div><!-- .entry-content -->
 
                                 <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
-                                    <a href="#" class="btn gradient-bg mr-2">Start a campaign</a>
+                                    <a href="{% url 'create_campaign' %}" class="btn gradient-bg mr-2">Start a campaign</a>
                                     <a href="#" class="btn orange-border">Read More</a>
                                 </footer><!-- .entry-footer -->
                             </div><!-- .col -->
@@ -114,7 +74,7 @@
                                 </div><!-- .entry-content -->
 
                                 <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
-                                    <a href="#" class="btn gradient-bg mr-2">Start a Campaign</a>
+                                    <a href="{% url 'create_campaign' %}" class="btn gradient-bg mr-2">Start a Campaign</a>
                                     <a href="#" class="btn orange-border">Read More</a>
                                 </footer><!-- .entry-footer -->
                             </div><!-- .col -->
@@ -139,8 +99,8 @@
                                 </div><!-- .entry-content -->
 
                                 <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
-                                    <a href="#" class="btn gradient-bg mr-2">Start a Fundraiser</a>
-                                    <a href="#" class="btn orange-border">Start a Support Group</a>
+                                    <a href="{% url 'create_campaign' %}" class="btn gradient-bg mr-2">Start a Fundraiser</a>
+                                    <a href="{% url 'create_support_group' %}" class="btn orange-border">Start a Support Group</a>
                                 </footer><!-- .entry-footer -->
                             </div><!-- .col -->
                         </div><!-- .row -->
@@ -244,7 +204,7 @@
                         </div><!-- .entry-content -->
 
                         <div class="entry-footer mt-5">
-                            <a href="#" class="btn gradient-bg mr-2">Start a Campaign</a>
+                            <a href="{% url 'create_campaign' %}" class="btn gradient-bg mr-2">Start a Campaign</a>
                         </div><!-- .entry-footer -->
                     </div><!-- .welcome-content -->
                 </div><!-- .col -->
